@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* font, text color */
+  font-family: sans-serif;
+}
+
+.container {
+  /* set the height and width to the size of the view port */
+  width: 100vw;
+  height: 100vh;
+
+  /* initialize grid */
+  display: grid;
+  grid-template-rows: 4fr 1fr 1fr 12fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1% 1%;
+}
+
+/* google logo */
+.logo {
+  /* grid */
+  grid-area: 1 / 2 / span 1 / span 2;
+  justify-self: center;
+
+  /* position logo */
+  position: relative;
+  top: 10vh;
+}
+
+/* styles for all search related content */
+.search {
+  /* font, text color */
+  font-family: inherit;
+  font-size: 100%;
+  color: #696969;
+}
+
+/* form container for search box */
+#search-form {
+  /* grid */
+  grid-area: 2 / 2 / span 1 / span 2;  
+  justify-self: center;
+}
+
+/* text input for search box */
+input[type=text] {
+  /* size */
+  width: 500px;
+  height: 30px;
+
+  /* border */
+  border-radius: 50px;
+  border-width: 1px;
+  border-color: #D3D3D3;
+}
+
+/* google search button */
+.google {
+  /* grid */
+  grid-area: 3 / 2 / span 1 / span 1;   
+
+}
+
+/* feeling lucky button */
+.lucky {
+  /* grid */
+  grid-area: 3 / 3 / span 1 / span 1;   
+}
+
+/* discover link */
+.discover {
+  /* grid */
+  grid-area: 4 / 2 / span 1 / span 2;   
+  justify-self: center;
+
+  /* center text */
+  text-align: center;
+}
