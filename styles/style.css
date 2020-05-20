@@ -6,18 +6,19 @@
 html {
   /* font, text color */
   font-family: sans-serif;
+  font-size: 10pt;
 }
 
 .container {
   /* set the height and width to the size of the view port */
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
 
   /* initialize grid */
   display: grid;
-  grid-template-rows: 4fr 1fr 1fr 12fr;
+  grid-template-rows: 8fr 1fr 20fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1% 1%;
+  grid-gap: 1.5% 1.5%;
 }
 
 /* google logo */
@@ -28,7 +29,10 @@ html {
 
   /* position logo */
   position: relative;
-  top: 10vh;
+  top: 16vh;
+
+  /* size */
+  width: 272px
 }
 
 /* styles for all search related content */
@@ -37,6 +41,9 @@ html {
   font-family: inherit;
   font-size: 100%;
   color: #696969;
+
+  /* outline when clicked: https://stackoverflow.com/questions/1457849/how-to-remove-the-border-highlight-on-an-input-text-element*/
+  outline: none;
 }
 
 /* form container for search box */
@@ -50,33 +57,76 @@ html {
 input[type=text] {
   /* size */
   width: 500px;
-  height: 30px;
+  height: 45px;
 
   /* border */
   border-radius: 50px;
-  border-width: 1px;
+  border-width: .5px;
   border-color: #D3D3D3;
+  border-style: solid;
+
+  /* add padding to the text input */
+  box-sizing: border-box; /* i've fixed the size i want for the input, border-box will preserve */
+  padding-left: 40px;
 }
+
+/* hover for search box */
+/*input[type=text]:hover {
+  outline-color: #D3D3D3;
+}*/
+
+/* both buttons */
+.google, .lucky {
+  /* removing default browser button styling ref: https://stackoverflow.com/questions/31601076/why-doesnt-my-input-button-change-height*/ 
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* color */
+  background-color: #f1f1f1;
+
+  /* border */
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #f1f1f1;
+
+}
+
+/* both buttons hover */
+.google:hover, .lucky:hover {
+  /* border */
+  border-color: #A9A9A9;
+} 
+
+/* both buttons click */
+.google:active, .lucky:active {
+  /* border */
+  border-color: #00688B;
+} 
 
 /* google search button */
 .google {
   /* grid */
-  grid-area: 3 / 2 / span 1 / span 1;   
+  grid-area: 3 / 2 / span 1 / span 1;  
 
+  /* size */
+  width: 120px;
+  height: 40px;
+
+  /* positioning */
+  justify-self: right;
 }
 
 /* feeling lucky button */
 .lucky {
   /* grid */
   grid-area: 3 / 3 / span 1 / span 1;   
+
+  /* size */
+  width: 140px;
+  height: 40px;
+
+  /* positioning */
+  justify-self: left;
 }
 
-/* discover link */
-.discover {
-  /* grid */
-  grid-area: 4 / 2 / span 1 / span 2;   
-  justify-self: center;
-
-  /* center text */
-  text-align: center;
-}
