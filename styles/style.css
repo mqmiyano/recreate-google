@@ -27,7 +27,7 @@ html {
   grid-area: 1 / 2 / span 1 / span 2;
   justify-self: center;
 
-  /* position logo */
+  /* positioning */
   position: relative;
   top: 16vh;
 
@@ -51,6 +51,34 @@ html {
   /* grid */
   grid-area: 2 / 2 / span 1 / span 2;  
   justify-self: center;
+
+  /* positioning. this needs to be set to position the child elements (images) relative to it */
+  position: relative;
+}
+
+/* magnifying glass for search box */
+.mag-glass {
+  /* positioning */
+  position: absolute; /* with respect to parent */
+  left: 20px;
+  top: 13px;
+
+  /* size */
+  height: 19px;
+
+  /* i can't change the color to a lighter gray, so working around this by lowering opacity */
+  opacity: 0.5;
+}
+
+/* mic for search box */
+.mic {
+  /* positioning */
+  position: absolute; /* with respect to parent */
+  left: 465px;
+  top: 13px;
+
+  /* size */
+  height: 19px;
 }
 
 /* text input for search box */
@@ -67,13 +95,13 @@ input[type=text] {
 
   /* add padding to the text input */
   box-sizing: border-box; /* i've fixed the size i want for the input, border-box will preserve */
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
-/* hover for search box */
-/*input[type=text]:hover {
-  outline-color: #D3D3D3;
-}*/
+/* hover over search box */
+input[type=text]:hover {
+  box-shadow: 0px 0px 5px #D3D3D3;
+}
 
 /* both buttons */
 .google, .lucky {
@@ -89,7 +117,6 @@ input[type=text] {
   border-radius: 5px;
   border-style: solid;
   border-color: #f1f1f1;
-
 }
 
 /* both buttons hover */
@@ -130,3 +157,46 @@ input[type=text] {
   justify-self: left;
 }
 
+/* top and bottom nav links */
+nav a {
+  /* spacing */
+  margin: 0px 20px 0px 0px;
+
+  /* positioning */
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
+
+/* removing the underlying of the hyperlinks. styles of this are selected like this ref: https://www.w3schools.com/css/css_link.asp */
+nav a:link {
+  text-decoration: none;
+}
+
+/* moving parts of the nav bars to the right */
+.right-rail {
+  /* positioning */
+  float: right;
+  position: relative;
+  right: 60px;
+}
+
+/* footer container */
+footer nav {
+  /* size */
+  height: 50px;
+
+  /* color */
+  background-color: #f1f1f1;
+}
+
+/* content on lucky.html and search.html */
+.easter-egg {
+  /* positioning */
+  position: relative;
+  top: 20px;
+  left: 20px;
+
+  /* font */
+  font-size: 20pt;
+}
